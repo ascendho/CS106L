@@ -1,0 +1,48 @@
+# Build directories
+**/cmake-build-*/
+**/build/
+**/Debug/
+**/Release/
+
+# IDE files
+**/.idea/
+**/.vscode/
+**/.vs/
+
+# Compiled binaries
+**/*.exe
+**/*.dll
+**/*.so
+**/*.dylib
+**/*.a
+**/*.lib
+**/*.pdb
+
+# CMake generated files
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+**/CMakeFiles/
+**/*.cmake
+!**/CMakeLists.txt
+
+# Object files
+**/*.o
+**/*.obj
+
+# Temporary files
+**/*.tmp
+**/*.temp
+**/*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Only keep source files
+# This will allow:
+# - *.cpp
+# - *.h
+# - *.hpp
+# - CMakeLists.txt
+# - README files
