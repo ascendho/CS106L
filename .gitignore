@@ -46,3 +46,9 @@ Thumbs.db
 # - *.hpp
 # - CMakeLists.txt
 # - README files
+
+
+# 忽略cpp文件编译后生成的可执行文件
+echo "*" >> .gitignore
+echo "!*.*" >> .gitignore
+echo "!*/" >> .gitignore
