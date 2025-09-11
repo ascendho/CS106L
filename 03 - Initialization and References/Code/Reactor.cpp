@@ -1,6 +1,3 @@
-// Compile and run this code using the following command:
-// g++ -std=c++23 -o Reactor Reactor.cpp && ./Reactor
-
 #include <iostream>
 
 
@@ -33,7 +30,6 @@ private:
 
 int main () {
 	// narrowing conversion, saving 100.8 into an integer, see type on line 32
-    // 注意区分()和{}的不同
 	int criticalTemperature(100.8);
 	Reactor reactor(criticalTemperature);
 	reactor.checkCool();

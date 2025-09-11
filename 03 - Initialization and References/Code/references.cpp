@@ -1,6 +1,3 @@
-// Compile and run this code using the following command:
-// g++ -std=c++23 -o references references.cpp && ./references
-
 #include <iostream>
 #include <math.h>
 

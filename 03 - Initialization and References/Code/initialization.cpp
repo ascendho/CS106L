@@ -1,6 +1,3 @@
-// Compile and run this code using the following command:
-// g++ -std=c++23 -o initialization initialization.cpp && ./initialization
-
 #include <iostream>
 
 int main() {

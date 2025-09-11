@@ -1,6 +1,3 @@
-// Compile and run this code using the following command:
-// g++ -std=c++23 -o const const.cpp && ./const
-
 #include <iostream>
 #include <vector>
 
@@ -12,9 +9,9 @@ int main()
     const std::vector<int>& const_ref{ vec };  /// a const reference
 
     vec.push_back(3);
-    const_vec.push_back(3); // This line will cause a compilation error because const_vec is a const vector
+    const_vec.push_back(3);
     ref_vec.push_back(3);
-    const_ref.push_back(3); // This line will also cause a compilation error because const_ref is a const reference
+    const_ref.push_back(3);
 
     return 0;
 }
