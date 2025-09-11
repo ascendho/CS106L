@@ -12,13 +12,13 @@
 
 ## 索引表
 
-| 序号 | 章节                          | 代码                                                       | 阅读                                                         | 笔记                            |
-| ---- | ----------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- |
-| 01   | Welcome                       | N/A                                                        | N/A                                                          | N/A                             |
-| 02   | Types and Structs             | <a href="02 - Types and Structs/Code">Code</a>             | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> | WIP                             |
-| 03   | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | WIP                             |
-| 04   | Guest Lecture                 | N/A                                                        | N/A                                                          | N/A                             |
-| 05   | Streams                       | <a href="05 - Streams/Code">Code</a>                       | N/A                                                          | <a href="notes/流.md">流.md</a> |
+| 序号 |             章节              |                            代码                            |                             阅读                             |              笔记               |
+| :--: | :---------------------------: | :--------------------------------------------------------: | :----------------------------------------------------------: | :-----------------------------: |
+|  01  |            Welcome            |                            N/A                             |                             N/A                              |               N/A               |
+|  02  |       Types and Structs       |       <a href="02 - Types and Structs/Code">Code</a>       | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> |               WIP               |
+|  03  | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> |               WIP               |
+|  04  |         Guest Lecture         |                            N/A                             |                             N/A                              |               N/A               |
+|  05  |            Streams            |            <a href="05 - Streams/Code">Code</a>            |                             N/A                              | <a href="notes/流.md">流.md</a> |
 
 
 
