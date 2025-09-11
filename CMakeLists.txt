@@ -3,16 +3,18 @@ project(CS106L
         DESCRIPTION "CS106L C++ Course"
         LANGUAGES CXX)
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  if(CMAKE_CXX_COMPILER_VERSION MATCHES "^14.")
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "10.0")
     message(STATUS "You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
   else()
-    message(WARNING "!! We recommend that you use clang-14 for this course. You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, a different version.")
+    message(WARNING "!! We recommend that you use g++ version 10 or higher for this course. You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, which may not support all C++23 features.")
   endif()
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
-  message(STATUS "You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+  message(STATUS "You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION} (Note: Course materials recommend g++)")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  message(STATUS "You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION} (Note: Course materials recommend g++)")
 else()
-  message(WARNING "!! We recommend that you use clang-14 for this course. You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, which is not clang.")
+  message(WARNING "!! We recommend that you use g++ for this course. You're using ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, which is not g++.")
 endif()
 
 set(CMAKE_CXX_STANDARD 23)
