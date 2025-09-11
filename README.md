@@ -12,13 +12,13 @@
 
 ## 索引表
 
-| 序号 | 章节                          | 笔记                            |
-| ---- | ----------------------------- | ------------------------------- |
-| 01   | Welcome                       | N/A                             |
-| 02   | Types and Structs             | WIP                             |
-| 03   | Initialization and References | WIP                             |
-| 04   | Guest Lecture                 | N/A                             |
-| 05   | Streams                       | <a href="notes/流.md">流.md</a> |
+| 序号 | 章节                          | 代码                                                       | 阅读                                                         | 笔记                            |
+| ---- | ----------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- |
+| 01   | Welcome                       | N/A                                                        | N/A                                                          | N/A                             |
+| 02   | Types and Structs             | <a href="02 - Types and Structs/Code">Code</a>             | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> | WIP                             |
+| 03   | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | WIP                             |
+| 04   | Guest Lecture                 | N/A                                                        | N/A                                                          | N/A                             |
+| 05   | Streams                       | <a href="05 - Streams/Code">Code</a>                       | N/A                                                          | <a href="notes/流.md">流.md</a> |
 
 
 
@@ -46,4 +46,10 @@ $ make -j8      // 调用Make工具来执行编译，-j表示并行，8表示最
 ![Screenshot 2025-06-14 at 02.21.46](assets/Screenshot%202025-06-14%20at%2002.21.46.png)
 
 总结：第一个作业就是配置C++开发环境，主要是安装C++的编译器gcc，版本控制工具Git和用于运行autograder的Python（3.8及以上）。后面两个很好解决，因为之前就已经安装过了，麻烦的是编译器，而mac上默认的编译器是clang，因为网络问题，下载gcc时很慢，而且中间还失败了几次，但在不断坚持下，最后一次终于成功了。
+
+
+
+## 许可证
+
+斯坦福大学的原始材料（slides、lecture code等资料）保持其原有版权，本人的贡献内容（notes、作业解答等内容）采用开放许可证，详见 <a href="LICENSE">许可证</a>
 
