@@ -33,3 +33,4 @@ add_executable(references "03 - Initialization and References/Code/references.cp
 # 05 - Streams
 add_executable(stringstreamExampleBug "05 - Streams/Code/stringstreamExampleBug.cpp")
 add_executable(stringstreamExample "05 - Streams/Code/stringstreamExample.cpp")
+add_executable(verifyPI "05 - Streams/Code/verifyPI.cpp")
