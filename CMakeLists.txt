@@ -31,6 +31,5 @@ add_executable(reactor "03 - Initialization and References/Code/Reactor.cpp")
 add_executable(references "03 - Initialization and References/Code/references.cpp")
 
 # 05 - Streams
-add_executable(stringstream_example "05 - Streams/Code/stringstreamExampleBug.cpp")
-
-
+add_executable(stringstreamExampleBug "05 - Streams/Code/stringstreamExampleBug.cpp")
+add_executable(stringstreamExample "05 - Streams/Code/stringstreamExample.cpp")
