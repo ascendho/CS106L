@@ -19,8 +19,9 @@
 |  03  | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | <a href="notes/初始化与引用.md">初始化与引用.md</a> |
 |  04  |         Guest Lecture         |                            N/A                             |                             N/A                              |                         N/A                         |
 |  05  |            Streams            |            <a href="05 - Streams/Code">Code</a>            |                             N/A                              |           <a href="notes/流.md">流.md</a>           |
+|  06  |          Containers           |                            N/A                             | [Reader](https://cs106l.github.io/textbook/containers/sequence-containers) |         <a href="notes/容器.md">容器.md</a>         |
 
-> **注**：官方开源了 部分年份（如2020）的课程录像，可自行在 B站 检索
+> **注**：官方开源了部分年份（如2020）的课程录像，可自行在 B站 检索
 
 ## 构建方式
 
