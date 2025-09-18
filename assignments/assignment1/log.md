@@ -1,6 +1,6 @@
 ## SimpleEnroll
 
-在做的过程中发现了一个很隐蔽的问题——在容器遍历的过程中修改容器很可能导致意外的行为！
+1. 在做的过程中发现了一个很隐蔽的问题——在容器遍历的过程中修改容器很可能导致意外的行为！
 
 如；
 
@@ -47,6 +47,75 @@ for (const auto &course : courses_to_delete) {
     delete_elem_from_vector(all_courses, course); // ✅
 }
 ```
+
+
+
+2. 在 C++ 中，判断字符串 “是不是 null” 需要根据字符串的类型来区分，主要分为两种情况：**C 风格字符串（字符指针）**和**C++ 标准库字符串（`std::string`）**
+
+- C 风格字符串本质是字符指针（`char*`），“null” 通常指指针本身为 `nullptr`（或旧标准中的 `NULL`），即指针未指向任何有效内存。判断其 “不是 null”，就是判断指针**不等于 `nullptr`**：
+
+```c++
+#include <iostream>
+
+int main() {
+    const char* cstr = "hello";  		// 非null的C风格字符串
+    const char* nullStr = nullptr;  // null的C风格字符串（指针为空）
+
+    // 判断字符串不是null（指针非空）
+    if (cstr != nullptr) {
+        std::cout << "cstr不是null" << std::endl;
+    }
+
+    if (nullStr != nullptr) {
+        std::cout << "nullStr不是null" << std::endl;  // 不会执行
+    } else {
+        std::cout << "nullStr是null" << std::endl;
+    }
+
+    return 0;
+}
+
+
+/* 
+
+注：即使指针非 null（!= nullptr），也可能指向空字符串（如 const char* emptyStr = "";），此时字符串长度为 0，但指针本身不是 null。若需同时判断 “非 null 且非空字符串”，需额外检查：
+
+if (cstr != nullptr && cstr[0] != '\0') {
+    // 指针非null，且字符串非空（至少有一个字符）
+}
+
+*/
+```
+
+- `std::string` 是一个类类型，其对象**永远不会是 `nullptr`**（因为它不是指针）。我们通常说的 “空” 是指字符串中没有字符（长度为 0）。判断 `std::string`“不是空字符串”（即有内容），可以使用 `empty()` 成员函数或 `size()` 成员函数：
+
+```c++
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string str = "hello";  // 非空字符串
+    std::string emptyStr;       // 空字符串（默认初始化）
+
+    // 判断字符串不是空（有内容）
+    if (!str.empty()) {  				// empty()返回true表示空字符串
+        std::cout << "str不是空字符串" << std::endl;
+    }
+
+    if (emptyStr.empty()) {
+        std::cout << "emptyStr是空字符串" << std::endl;
+    }
+
+    // 也可以用size()判断（size()返回0表示空字符串）
+    if (str.size() > 0) {
+        std::cout << "str不是空字符串" << std::endl;
+    }
+
+    return 0;
+}
+```
+
+> 注意区分 “指针为 null” 和 “字符串为空” 的概念：前者是指针未指向有效内存，后者是指针指向了有效内存但内存中没有字符。
 
 
 
