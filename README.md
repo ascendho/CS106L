@@ -12,14 +12,14 @@
 
 ## 索引表
 
-| 序号 |             章节              |                            代码                            |                             读本                             |                        笔记                         |
-| :--: | :---------------------------: | :--------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------: |
-|  01  |            Welcome            |                            N/A                             |                             N/A                              |                         N/A                         |
-|  02  |       Types and Structs       |       <a href="02 - Types and Structs/Code">Code</a>       | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> | <a href="notes/类型和结构体.md">类型和结构体.md</a> |
-|  03  | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | <a href="notes/初始化与引用.md">初始化与引用.md</a> |
-|  04  |         Guest Lecture         |                            N/A                             |                             N/A                              |                         N/A                         |
-|  05  |            Streams            |            <a href="05 - Streams/Code">Code</a>            |                             N/A                              |           <a href="notes/流.md">流.md</a>           |
-|  06  |          Containers           |                            N/A                             | [Reader](https://cs106l.github.io/textbook/containers/sequence-containers) |         <a href="notes/容器.md">容器.md</a>         |
+| 序号 |             章节              |                            代码                            |                             读本                             |                        笔记                         | 编程作业                                                  |
+| :--: | :---------------------------: | :--------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------: | --------------------------------------------------------- |
+|  01  |            Welcome            |                            N/A                             |                             N/A                              |                         N/A                         |                                                           |
+|  02  |       Types and Structs       |       <a href="02 - Types and Structs/Code">Code</a>       | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> | <a href="notes/类型和结构体.md">类型和结构体.md</a> |                                                           |
+|  03  | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | <a href="notes/初始化与引用.md">初始化与引用.md</a> |                                                           |
+|  04  |         Guest Lecture         |                            N/A                             |                             N/A                              |                         N/A                         | <a href="assignments/assignment0/log.md">Setup</a>        |
+|  05  |            Streams            |            <a href="05 - Streams/Code">Code</a>            |                             N/A                              |           <a href="notes/流.md">流.md</a>           |                                                           |
+|  06  |          Containers           |                            N/A                             | [Reader](https://cs106l.github.io/textbook/containers/sequence-containers) |         <a href="notes/容器.md">容器.md</a>         | <a href="assignments/assignment1/log.md">SimpleEnroll</a> |
 
 > **注**：官方开源了部分年份（如2020）的课程录像，可自行在 B站 检索
 
@@ -37,16 +37,6 @@ $ make -j8      // 调用Make工具来执行编译，-j表示并行，8表示最
 执行这些命令后，生成的可执行文件将位于 `build` 目录中。
 
 > ⚠️ 重要提示：项目中包含的部分代码示例在编译时会出现预期的错误，此设计是为了教学演示目的而特意保留的
-
-
-
-## 作业进度
-
-### assignment0 - Setup
-
-![Screenshot 2025-06-14 at 02.21.46](assets/Screenshot%202025-06-14%20at%2002.21.46.png)
-
-总结：第一个作业就是配置 C++ 开发环境，主要是安装 C++ 的编译器 gcc ，版本控制工具 Git 和用于运行 autograder 的 Python （3.8及以上）。后面两个很好解决，因为之前就已经安装过了，麻烦的是编译器，而 mac 上默认的编译器是 clang ，因为网络问题，下载 gcc 时很慢，而且中间还失败了几次，但在不断坚持下，最后一次终于成功了。
 
 
 
