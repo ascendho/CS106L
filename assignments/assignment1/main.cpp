@@ -58,7 +58,7 @@ struct Course {
  * @param filename The name of the file to parse.
  * @param courses  A vector of courses to populate.
  */
-void parse_csv(std::string filename, std::vector<Course>& courses) {
+void parse_csv(std::string filename, std::vector<Course> &courses) {
     std::ifstream ifs(filename);
     std::string line;
 
@@ -99,7 +99,7 @@ void parse_csv(std::string filename, std::vector<Course>& courses) {
  * @param all_courses A vector of all courses gotten by calling `parse_csv`.
  *                    This vector will be modified by removing all offered courses.
  */
-void write_courses_offered(std::vector<Course>& all_courses) {
+void write_courses_offered(std::vector<Course> &all_courses) {
     std::ofstream ofs(COURSES_OFFERED_PATH);
 
     if (ofs.is_open()) {
@@ -107,14 +107,14 @@ void write_courses_offered(std::vector<Course>& all_courses) {
 
         std::vector<Course> courses_to_delete;
 
-        for (const auto& course : all_courses) {
+        for (const auto &course: all_courses) {
             if (course.quarter != "null") {
                 ofs << course.title << "," << course.number_of_units << "," << course.quarter << std::endl;
                 courses_to_delete.push_back(course);
             }
         }
 
-        for (const auto& course : courses_to_delete) {
+        for (const auto &course: courses_to_delete) {
             delete_elem_from_vector(all_courses, course);
         }
 
@@ -141,7 +141,7 @@ void write_courses_not_offered(std::vector<Course> unlisted_courses) {
     if (ofs.is_open()) {
         ofs << "Title,Number of Units,Quarter" << std::endl;
 
-        for (const auto& course : unlisted_courses) {
+        for (const auto &course: unlisted_courses) {
             ofs << course.title << "," << course.number_of_units << "," << course.quarter << std::endl;
         }
     }
