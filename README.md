@@ -10,19 +10,6 @@
 
 
 
-## 索引表
-
-| 序号 |             章节              |                            代码                            |                             读本                             |                        笔记                         | 编程作业                                                  |
-| :--: | :---------------------------: | :--------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------: | --------------------------------------------------------- |
-|  01  |            Welcome            |                            N/A                             |                             N/A                              |                         N/A                         |                                                           |
-|  02  |       Types and Structs       |       <a href="02 - Types and Structs/Code">Code</a>       | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/types-and-structs">Reader</a> | <a href="notes/类型和结构体.md">类型和结构体.md</a> |                                                           |
-|  03  | Initialization and References | <a href="03 - Initialization and References/Code">Code</a> | <a href="https://cs106l.github.io/textbook/cpp-fundamentals/initialization-and-references#how-to-initialize-objects">Reader</a> | <a href="notes/初始化与引用.md">初始化与引用.md</a> |                                                           |
-|  04  |         Guest Lecture         |                            N/A                             |                             N/A                              |                         N/A                         | <a href="assignments/assignment0/log.md">Setup</a>        |
-|  05  |            Streams            |            <a href="05 - Streams/Code">Code</a>            |                             N/A                              |           <a href="notes/流.md">流.md</a>           |                                                           |
-|  06  |          Containers           |                            N/A                             | [Reader](https://cs106l.github.io/textbook/containers/sequence-containers) |         <a href="notes/容器.md">容器.md</a>         | <a href="assignments/assignment1/log.md">SimpleEnroll</a> |
-
-> **注**：官方开源了部分年份（如2020）的课程录像，可自行在 B站 检索
-
 ## 构建方式
 
 大部分文件夹包含若干 C++ 代码文件，位于各章节目录下，建议深入研读。每个代码文件均可编译为对应的可执行文件。请使用 CMake 构建这些可执行文件，以下一组命令应能完成所有可执行文件的构建：
