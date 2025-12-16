@@ -48,7 +48,8 @@ Thumbs.db
 # - README files
 
 
-# 忽略cpp文件编译后生成的可执行文件
-echo "*" >> .gitignore
-echo "!*.*" >> .gitignore
-echo "!*/" >> .gitignore
+# 忽略 cpp 文件编译后生成的可执行文件（局部可执行文件）
+# 忽略工作区根目录下的三个可执行文件
+part1
+part2
+part3
