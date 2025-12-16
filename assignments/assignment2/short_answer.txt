@@ -1,11 +1,20 @@
-Before submitting this file, make sure that there are no more TODO
-placeholders remaining in the file (and remove this comment too).
-
 Marriage Pact
 -------------
 
 Q1. It is your choice to use either an ordered or unordered set. In a few sentences, what are some of the tradeoffs between the two? Additionally, please give an example (that has not been shown in lecture) of a valid hash function that could be used to hash student names for an unordered set.
-A1. TODO
+A1. 有序集合（`std::set`）与无序集合（`std::unordered_set`）的权衡：
+- 有序集合：基于平衡二叉搜索树，查找/插入/删除为 O(log n)，元素按顺序存储，适合需要有序遍历或范围查询的场景；节点与指针开销较大，常数因子通常比哈希表高。
+- 无序集合：基于哈希表，平均查找/插入/删除为 O(1)，通常更快但不保证元素顺序；需要良好哈希函数以避免碰撞，最坏情况会退化到 O(n)，并且在重哈希（rehash）时迭代器/引用可能失效。
+- 选择建议：若需要排序或范围操作用 `std::set`，若主要关心快速存在性检查且不关心顺序用 `std::unordered_set`。
+
+示例哈希函数（对学生姓名的简单 DJB2 风格哈希）：
+std::size_t name_hash(const std::string& s) {
+	std::size_t h = 5381;
+	for (unsigned char c : s) h = ((h << 5) + h) + c; // h * 33 + c
+	return h;
+}
 
 Q2. Note that we are saving pointers to names in the queue, not names themselves. Why might this be desired in this problem? What happens if the original set where the names are stored goes out of scope and the pointers are referenced?
-A2. TODO
+A2. 在队列中保存指针的原因：避免频繁拷贝字符串，节省内存与拷贝开销；同时让队列引用集合中唯一的“权威”字符串（便于比较与身份判别）。
+
+如果原始集合超出作用域或被销毁：这些指针会成为悬垂指针（dangling pointers），再次访问会导致未定义行为（崩溃或数据错误）。因此必须保证存放名字的容器在使用这些指针期间保持存活；若不能保证，应把字符串副本存入队列（例如 `std::queue<std::string>`）。
