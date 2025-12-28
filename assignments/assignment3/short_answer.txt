@@ -5,7 +5,11 @@ Make a Class
 ------------
 
 Q1. What’s const-correctness and why is it important?
-A1. TODO
+A1. Const-correctness means marking functions and variables that should not modify state as `const`.
+	It helps the compiler catch unintended mutations, makes APIs clearer to users, and
+	enables reasoning about code safety and optimization.
 
 Q2. Is your class const-correct? How do you know?
-A2. TODO
+A2. Yes — getters such as `getTitle()` and `getPages()` are marked `const`, and helper
+	validators that do not modify object state are `const` as well. This guarantees those
+	methods won't change the object's fields.

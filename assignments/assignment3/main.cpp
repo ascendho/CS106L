@@ -8,6 +8,9 @@
  * (unless you are really curious and want to!)                              *
  * ========================================================================= */
 
+// To compile: g++ -std=c++20 main.cpp class.cpp -o main
+// To run:     ./main
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -15,17 +18,21 @@
 
 #include "sandbox.cpp"
 
-int run_autograder() {
+int run_autograder()
+{
   auto run_program = [](std::string program, std::initializer_list<std::string> args,
-                        bool silent = false) {
+                        bool silent = false)
+  {
     std::stringstream ss;
 
     ss << program;
-    for (const auto& arg : args) {
+    for (const auto &arg : args)
+    {
       ss << ' ' << arg;
     }
 
-    if (silent) {
+    if (silent)
+    {
 #ifdef _WIN32
       ss << " >nul 2>&1";
 #else
@@ -38,14 +45,17 @@ int run_autograder() {
   };
 
   std::string python;
-  for (const auto& option : {"python", "python3", "/usr/bin/python3", "/usr/bin/python"}) {
-    if (run_program(option, {"--version"}, true) == 0) {
+  for (const auto &option : {"python", "python3", "/usr/bin/python3", "/usr/bin/python"})
+  {
+    if (run_program(option, {"--version"}, true) == 0)
+    {
       python = option;
       break;
     }
   }
 
-  if (python.empty()) {
+  if (python.empty())
+  {
     std::cerr << "Python was not found on your system. Please install Python and "
                  "try again."
               << "\n";
@@ -55,7 +65,8 @@ int run_autograder() {
   return run_program(python, {"autograder/autograder.py"});
 }
 
-int main() {
-    sandbox();
-    return run_autograder();
+int main()
+{
+  sandbox();
+  return run_autograder();
 }
