@@ -7,6 +7,9 @@
  *
  */
 
+ // To compile: g++ -std=c++20 main.cpp -o main
+ // To run:     ./main
+
 #include <fstream>
 #include <iostream>
 #include <queue>
