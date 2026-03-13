@@ -5,13 +5,13 @@ Unique Pointer
 --------------
 
 Q1. List one or two benefits of using RAII to manage memory instead manually calling `new` and `delete`.
-A1. TODO
+A1. (1) Memory is automatically freed when the owning object goes out of scope, eliminating memory leaks even in the presence of exceptions. (2) It removes the need to manually track ownership and call delete, making code simpler and less error-prone.
 
 Q2. When implementing move semantics for a `unique_ptr`, for example in the move constructor `unique_ptr(unique_ptr&& other)`, it is essential that we set the underlying pointer of the `other` parameter to `nullptr` before exiting the function. Explain in your own words what problem would arise if we did not.
-A2. TODO
+A2. If we did not set `other._ptr` to `nullptr`, then both the newly constructed unique_ptr and `other` would hold the same raw pointer. When `other` is later destroyed, its destructor would call `delete` on that pointer. The new unique_ptr would then be holding a dangling pointer, and when it is eventually destroyed, its destructor would call `delete` a second time on the same memory, causing undefined behavior (a double-free error).
 
 Q3. This method of recursive deallocation through RAII works great for small lists, but may pose a problem for longer lists. Why? Hint: what is the limit for how "deep" a recursive function's call stack can grow?
-A3. TODO
+A3. Each time a node is destroyed, its destructor destroys the next node, which in turn destroys the one after that. This creates a chain of recursive destructor calls, one stack frame per node. Every program has a limited call stack size, so for a sufficiently long list this recursion will overflow the call stack, causing a stack overflow crash.
 
 Q4. What does `std::move` do in this context? Why is it safe to use `std::move` and move semantics here?
-A4. TODO
+A4. `std::move` casts `head` (an lvalue) to an rvalue reference, which triggers the move assignment operator instead of the (deleted) copy assignment operator. Ownership of the underlying raw pointer is transferred from `head` into `node->next`, and `head` is left as `nullptr`. This is safe because after the move we no longer use `head` to access the old data — we immediately replace it with `node` — so there is never more than one unique_ptr owning the same memory at any point in time.

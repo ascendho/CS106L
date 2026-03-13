@@ -12,7 +12,7 @@ namespace cs106l {
  */
 template <typename T> class unique_ptr {
 private:
-  /* STUDENT TODO: What data must a unique_ptr keep track of? */
+  T* _ptr;
 
 public:
   /**
@@ -20,18 +20,12 @@ public:
    * @param ptr The pointer to manage.
    * @note You should avoid using this constructor directly and instead use `make_unique()`.
    */
-  unique_ptr(T* ptr) {
-    /* STUDENT TODO: Implement the constructor */
-    throw std::runtime_error("Not implemented: unique_ptr(T* ptr)");
-  }
+  unique_ptr(T* ptr) : _ptr(ptr) {}
 
   /**
    * @brief Constructs a new `unique_ptr` from `nullptr`.
    */
-  unique_ptr(std::nullptr_t) {
-    /* STUDENT TODO: Implement the nullptr constructor */
-    throw std::runtime_error("Not implemented: unique_ptr(std::nullptr_t)");
-  }
+  unique_ptr(std::nullptr_t) : _ptr(nullptr) {}
 
   /**
    * @brief Constructs an empty `unique_ptr`.
@@ -43,57 +37,50 @@ public:
    * @brief Dereferences a `unique_ptr` and returns a reference to the object.
    * @return A reference to the object.
    */
-  T& operator*() {
-    /* STUDENT TODO: Implement the dereference operator */
-    throw std::runtime_error("Not implemented: operator*()");
-  }
+  T& operator*() { return *_ptr; }
 
   /**
    * @brief Dereferences a `unique_ptr` and returns a const reference to the object.
    * @return A const reference to the object.
    */
-  const T& operator*() const {
-    /* STUDENT TODO: Implement the dereference operator (const) */
-    throw std::runtime_error("Not implemented: operator*() const");
-  }
+  const T& operator*() const { return *_ptr; }
 
   /**
    * @brief Returns a pointer to the object managed by the `unique_ptr`.
    * @note This allows for accessing the members of the managed object through the `->` operator.
    * @return A pointer to the object.
    */
-  T* operator->() {
-    /* STUDENT TODO: Implement the arrow operator */
-    throw std::runtime_error("Not implemented: operator->()");
-  }
+  T* operator->() { return _ptr; }
 
   /**
    * @brief Returns a const pointer to the object managed by the `unique_ptr`.
    * @note This allows for accessing the members of the managed object through the `->` operator.
    * @return A const pointer to the object.
    */
-  const T* operator->() const {
-    /* STUDENT TODO: Implement the arrow operator */
-    throw std::runtime_error("Not implemented: operator->() const");
-  }
+  const T* operator->() const { return _ptr; }
 
   /**
    * @brief Returns whether or not the `unique_ptr` is non-null.
    * @note This allows us to use a `unique_ptr` inside an if-statement.
    * @return `true` if the `unique_ptr` is non-null, `false` otherwise.
    */
-  operator bool() const {
-    /* STUDENT TODO: Implement the boolean conversion operator */
-    throw std::runtime_error("Not implemented: operator bool() const");
-  }
+  operator bool() const { return _ptr != nullptr; }
 
-  /** STUDENT TODO: In the space below, do the following:
-   * - Implement a destructor
-   * - Delete the copy constructor
-   * - Delete the copy assignment operator
-   * - Implement the move constructor
-   * - Implement the move assignment operator
-   */
+  ~unique_ptr() { delete _ptr; }
+
+  unique_ptr(const unique_ptr& other) = delete;
+  unique_ptr& operator=(const unique_ptr& other) = delete;
+
+  unique_ptr(unique_ptr&& other) : _ptr(other._ptr) { other._ptr = nullptr; }
+
+  unique_ptr& operator=(unique_ptr&& other) {
+    if (this != &other) {
+      delete _ptr;
+      _ptr = other._ptr;
+      other._ptr = nullptr;
+    }
+    return *this;
+  }
 };
 
 /**
